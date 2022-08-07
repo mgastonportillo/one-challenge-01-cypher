@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>galeCypher</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="my_script.js"></script>
+</head>
+<body>
+    <div class="logos">
+        <div id="galeLogo"><img src="/images/gale.png" alt="gale"></div>
+        <div id="xCollab">x</div>
+        <div id="aluraLogo"><img src="/images/alura.png" alt="Alura"></div>
+    </div>
+    <div class="title"><img src="/images/encrypt.png" id="encryptLogo" alt="encrypt"></div>
+
+    <div class="container">
+        <div class="topPanel">
+            <div id="top" class="currentInput">
+                <textarea type="text" name="inputArea" id="inputArea" maxlength="60"  rows="5" placeholder="Enter text to encrypt&#10;(max 60 characters)"></textarea>
+            </div>
+        </div>
+        <div class="bottomPanel">
+            <div id="inputDisplay">"This is what you typed"</div>
+            <div id="outcomeDisplay">This is what you got</div>
+        </div>
+    </div>
+
+    <div class="encdecButtons">
+        <button class="button" id="encrypt">Encrypt</button>
+        <button class="button" id="decrypt">Decrypt</button>
+    </div>
+    <button id="scrollUp" onclick="scrollUp();"><a id="arrowUp">^</a></button>
+
+</body>
+</html>
