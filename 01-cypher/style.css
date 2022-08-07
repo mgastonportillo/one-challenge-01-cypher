@@ -85,28 +85,20 @@ html {
 }
 
 /* Output field */
-#inputDisplay,
 #outcomeDisplay {
     margin: 0 15px 0 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;;
     font-size: x-large;
     align-items: center;
     justify-content: center;
-}
-
-#inputDisplay {
-    color: #647592;
-}
-
-#outcomeDisplay {
-    margin-top: 15px;
+    text-align: center;
     color: #0d4a97;
 }
 
 /* Buttons */
 .encdecButtons {
     position: absolute;
-    bottom: 25px;
+    bottom: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,6 +116,15 @@ html {
 .button:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+#copyText {
+    position: relative;
+    left: 50%;
+    bottom: 60px;
+    margin-left: -45px;
+    color: white;
+    background-color: #0a3871;
 }
 
 #encrypt {
@@ -150,6 +151,7 @@ html {
     -ms-user-select: none;
     user-select: none;
     background-color: #d8dfe8;
+    color: #0a3871;
     font-size: large;
     text-align: center;
     width: 50px;
@@ -161,13 +163,6 @@ html {
 #scrollUp:hover {
     transform: scale(1.1);
     cursor: pointer;
-}
-
-#scrollUp a, a:hover, a:visited, a:link, a:active {
-    margin-top: 25%;
-    font-size: xx-large;
-    color: #4f6c8f;
-    text-decoration: none !important;
 }
 
 /* Media queries */

@@ -23,16 +23,18 @@
             </div>
         </div>
         <div class="bottomPanel">
-            <div id="inputDisplay">"This is what you typed"</div>
-            <div id="outcomeDisplay">This is what you got</div>
+            <div id="outcomeDisplay"></div>
         </div>
     </div>
 
     <div class="encdecButtons">
-        <button class="button" id="encrypt">Encrypt</button>
-        <button class="button" id="decrypt">Decrypt</button>
+        <button class="button" onclick="encryptText(); scrollDown();" id="encrypt">Encrypt</button>
+        <button class="button" onclick="decryptText(); scrollDown();" id="decrypt">Decrypt</button>
     </div>
-    <button id="scrollUp" onclick="scrollUp();"><a id="arrowUp">^</a></button>
+    <div>
+        <button id="copyText" class="button" onclick="copyText();">Copy to clipboard</button>
+        <button id="scrollUp" onclick="scrollUp();">^</button>
+    </div>
 
 </body>
 </html>
