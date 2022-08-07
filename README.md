@@ -3,6 +3,6 @@
 <hr>
 <h1>Previews</h1>
 <ol>
-<li>Encriptador</li>
+<li><a href="https://gale-cypher.netlify.app/">Encriptador</a></li>
 <li>Juego del Ahorcado</li>
 </ol>
