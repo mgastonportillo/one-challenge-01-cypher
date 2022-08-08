@@ -1,19 +1,48 @@
-// Main block
 const textToEncrypt = document.getElementById("inputArea");
 const encryptButton = document.getElementById("encrypt");
 const decryptButton = document.getElementById("decrypt");
 const displayResult = document.getElementById("output");
-// Regex accepts range from a to z, ñ and linebreaks
-const filter = "^[a-z ñ\r\n]+$";
-// Auxiliary variable for scrolling proper behaviour
-let auxiliar = 0;
+const filter = "^[a-z ñ\r\n]+$"; // Regex accepts range from a to z, ñ and linebreaks
+let auxiliar = 0; // Auxiliary variable for scrolling proper behaviour
 
 // Resize input text according to content
-function adjustHeight(textToEncrypt){
+function adjustHeight() {
     if (textToEncrypt.value === "") {
-        textToEncrypt.style.height = "60px"
+        textToEncrypt.style.height = "60px";
     } else {
-        textToEncrypt.style.height = (textToEncrypt.scrollHeight > textToEncrypt.clientHeight) ? `${textToEncrypt.scrollHeight}px` : `${(textToEncrypt.offsetHeight - 4)}px`;
+        textToEncrypt.style.height = (textToEncrypt.scrollHeight > textToEncrypt.clientHeight) ? `${textToEncrypt.scrollHeight}px` : `${textToEncrypt.offsetHeight - 4}px`;
+    }
+}
+
+// Copy to clipboard
+function confirmCopy(msgCopied) {
+    const copyExists = document.querySelector(".copied");
+    if(!copyExists) {
+        const copiedContainer = document.getElementById("copyConfirm");
+        const copiedDiv = document.createElement('div');
+        copiedDiv.classList.add("copied");
+        copiedDiv.textContent = msgCopied;            
+        copiedContainer.appendChild(copiedDiv);
+        setTimeout(() => {copiedDiv.remove();}, 4000);
+    }
+}
+
+function copyText() {
+    const copiedMsg = displayResult.innerHTML;
+    navigator.clipboard.writeText(copiedMsg);
+    confirmCopy("Text successfully copied to your clipboard!");
+}
+
+// Error custom notification
+function showError(errorMsg) {
+    const errorExists = document.querySelector(".error");
+    if(!errorExists) {
+        const errorContainer = document.getElementById("errorMsg");
+        const errorDiv = document.createElement('div');
+        errorDiv.classList.add("error");
+        errorDiv.textContent = errorMsg;            
+        errorContainer.appendChild(errorDiv);
+        setTimeout(() => {errorDiv.remove();}, 4000);
     }
 }
 
@@ -32,7 +61,12 @@ function scrollDown() {
 function encryptText() {
     displayResult.innerHTML = "";
     let text = textToEncrypt.value
-    if (text.match(filter) != null) {
+    if (text == "") {
+        showError("Try typing something?");
+        if (auxiliar === 1) {
+            auxiliar--;
+        }
+    } else if (text.match(filter) != null) {
         let words = text.split(" ");
         let postWords = [];
         for (let word of words) {
@@ -52,7 +86,7 @@ function encryptText() {
             auxiliar++;
         }
     } else {
-        alert("Remember: only lowercase, no special characters.");
+        showError("Remember: only lowercase, no accentuation nor other special characters!");
         if (auxiliar === 1) {
             auxiliar--;
         }
@@ -65,7 +99,12 @@ function encryptText() {
 function decryptText() {
     displayResult.innerHTML = "";
     let text = textToEncrypt.value
-    if (text.match(filter) != null) {
+    if (text == "") {
+        showError("Try typing something?");
+        if (auxiliar === 1) {
+            auxiliar--;
+        }
+    } else if (text.match(filter) != null) {
         let words = text.split(" ");
         let postWords = [];
         for (let word of words) {
@@ -84,17 +123,11 @@ function decryptText() {
             auxiliar++;
         }
     } else {
-        alert("Remember: only lowercase characters, no accentuation allowed.");
+        showError("Remember: only lowercase, no accentuation nor other special characters!");
         if (auxiliar === 1) {
             auxiliar--;
         }
     }
-}
-
-function copyText() {
-    const copiedMessage = displayResult.innerHTML;
-    navigator.clipboard.writeText(copiedMessage);
-    alert("Message successfully copied to your clipboard!");
 }
 
 // Easter Egg (It's Sherlock Time!)
