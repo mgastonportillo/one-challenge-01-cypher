@@ -3,6 +3,7 @@
 
 html, body {
     margin: 0;
+    /* Fallback */
     height: 100vh;
     height: 100dvh;
     scroll-behavior: smooth;
@@ -19,8 +20,10 @@ html, body {
     justify-content: space-between;
     align-items: center;
     background-color: #f3f5fc;
+    /* Fallback */
     height: 100vh;
     height: 100dvh;
+    /* Fallback */
     max-height: 100vh;
     max-height: 100dvh;
 }
@@ -31,8 +34,10 @@ html, body {
     align-items: stretch;
     flex-direction: column;
     background-color: #ffffff;
+    /* Fallback */
     height: 100vh;
     height: 100dvh;
+    /* Fallback */
     max-height: 100vh;
     max-height: 100dvh;
 }
@@ -78,7 +83,7 @@ html, body {
     width: 33px;
 }
 
-.info {
+.infoMsg {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     font-size: 11px;
@@ -88,13 +93,14 @@ html, body {
 }
 
 #infoIcon {
+    padding-top: 11px;
     height: 13px;
     width: 13px;
 }
 
 /* Input field */
 .inputDisplay {
-    padding-top: 12vh;
+    padding-top: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,7 +135,7 @@ html, body {
 
 #output {
     padding-top: 15vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     text-align: center;
     color: #0d4a97;
@@ -144,11 +150,17 @@ html, body {
     width: 100px;
     height: 50px;
     border: 1px solid #0a3871;
+    color: white;
+    background-color: #0a3871;
 }
 
 .button:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.button:active {
+    transform: scale(1);
 }
 
 /* Top buttons */
@@ -202,9 +214,78 @@ html, body {
     cursor: pointer;
 }
 
-#copyText {
-    color: white;
-    background-color: #0a3871;
+#scrollUp:active {
+    transform: scale(1);
 }
+
+#errorMsg {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 90%;
+    display: table;
+}
+
+.error {
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 85%;
+    height: 45px;
+    color: white;
+    background: #ff4d4f;
+    border-radius: 15px;
+    animation: shake 0.2s; 
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#copyConfirm {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+    width: 90%;
+    display: table;
+}
+
+.copied {
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 85%;
+    height: 45px;
+    color: white;
+    background: #52c41a;
+    border-radius: 15px;
+    animation: createBox .25s;
+}
+
+@keyframes createBox {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
 
 /* Media queries */
