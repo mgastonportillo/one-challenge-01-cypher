@@ -225,6 +225,7 @@ html, body {
     justify-content: center;
     height: 60px;
     width: 90%;
+    max-width: 50vh;
     display: table;
 }
 
@@ -236,7 +237,6 @@ html, body {
     display: table-cell;
     vertical-align: middle;
     width: 85%;
-    max-width: 85%;
     height: 45px;
     color: white;
     background: #ff4d4f;
@@ -265,6 +265,7 @@ html, body {
     justify-content: center;
     height: 62px;
     width: 90%;
+    max-width: 50vh;
     display: table;
 }
 
@@ -276,7 +277,6 @@ html, body {
     display: table-cell;
     vertical-align: middle;
     width: 85%;
-    max-width: 85%;
     height: 45px;
     color: white;
     background: #52c41a;
