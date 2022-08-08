@@ -1,15 +1,9 @@
 /* MOBILE FIRST */
 /* Basic setup of the document */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
+html, body {
     margin: 0;
-    /* Fallback */
-    height: 100vh;
-    height: 100dvh;
     min-height: calc(var(--vh) * 100);
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -23,12 +17,6 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #f3f5fc;
-    /* Fallback */
-    height: 100vh;
-    height: 100dvh;
-    /* Fallback */
-    max-height: 100vh;
-    max-height: 100dvh;
     min-height: calc(var(--vh) * 100);
 }
 
@@ -38,12 +26,6 @@ body {
     align-items: stretch;
     flex-direction: column;
     background-color: #ffffff;
-    /* Fallback */
-    height: 100vh;
-    height: 100dvh;
-    /* Fallback */
-    max-height: 100vh;
-    max-height: 100dvh;
     min-height: calc(var(--vh) * 100);
 }
 
