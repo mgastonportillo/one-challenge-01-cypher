@@ -58,7 +58,7 @@ html, body {
 }
 
 .rightLogos img {
-    padding: 25px;
+    padding: 25px 20px 0 0;
     height: 64px;
     width: 64px;
 }
@@ -289,5 +289,8 @@ html, body {
     to {transform: scale(1);}
 }
 
+.hide {
+    display: none;
+}
 
 /* Media queries */
