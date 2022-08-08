@@ -2,8 +2,24 @@ const textToEncrypt = document.getElementById("inputArea");
 const encryptButton = document.getElementById("encrypt");
 const decryptButton = document.getElementById("decrypt");
 const displayResult = document.getElementById("output");
-const filter = "^[a-z ñ\r\n]+$"; // Regex accepts range from a to z, ñ and linebreaks
-let auxiliar = 0; // Auxiliary variable for scrolling proper behaviour
+const bottomPanel = document.querySelector(".bottomPanel");
+// Regex accepts range from a to z, ñ, spaces and linebreaks
+const filter = "^[a-z ñ\r\n]+$";
+
+// Auxiliary variable for scrollDown() proper behaviour
+let scrollAuxiliar = 0;
+// Scrolling on click event
+function scrollDown() {
+    if (scrollAuxiliar === 1) {
+        window.scrollTo(0, document.body.scrollHeight);
+    } else {
+        null;
+    }
+}
+
+function scrollUp() {
+    window.scrollTo(0, 0);
+}
 
 // Resize input text according to content
 function adjustHeight() {
@@ -33,7 +49,7 @@ function copyText() {
     confirmCopy("Text successfully copied to your clipboard!");
 }
 
-// Error custom notification
+// Error notification
 function showError(errorMsg) {
     const errorExists = document.querySelector(".error");
     if(!errorExists) {
@@ -46,25 +62,23 @@ function showError(errorMsg) {
     }
 }
 
-function scrollUp() {
-    window.scrollTo(0, 0);
-}
-
-function scrollDown() {
-    if (auxiliar === 1) {
-        window.scrollTo(0, document.body.scrollHeight);
+// Unhide bottomPanel when there's an outcome
+function unhideBottom() {
+    if (displayResult.innerHTML != "") {
+        bottomPanel.classList.remove("hide");
     } else {
-        null;
+        bottomPanel.classList.add("hide");
     }
 }
 
+// Main functions
 function encryptText() {
     displayResult.innerHTML = "";
     let text = textToEncrypt.value
     if (text == "") {
         showError("Try typing something?");
-        if (auxiliar === 1) {
-            auxiliar--;
+        if (scrollAuxiliar === 1) {
+            scrollAuxiliar--;
         }
     } else if (text.match(filter) != null) {
         let words = text.split(" ");
@@ -80,20 +94,21 @@ function encryptText() {
         }
         let outcome = postWords.join(" ");
         displayResult.innerHTML = outcome;
-        if (auxiliar === 1) {
+        if (scrollAuxiliar === 1) {
             null;
         } else {
-            auxiliar++;
+            scrollAuxiliar++;
         }
     } else {
         showError("Remember: only lowercase, no accentuation nor other special characters!");
-        if (auxiliar === 1) {
-            auxiliar--;
+        if (scrollAuxiliar === 1) {
+            scrollAuxiliar--;
         }
     }
-    // auxiliar tracking
-    console.log(auxiliar);
-    return auxiliar;
+    unhideBottom();
+    // scrollAuxiliar tracking
+    console.log(scrollAuxiliar);
+    return scrollAuxiliar;
 }
 
 function decryptText() {
@@ -101,8 +116,8 @@ function decryptText() {
     let text = textToEncrypt.value
     if (text == "") {
         showError("Try typing something?");
-        if (auxiliar === 1) {
-            auxiliar--;
+        if (scrollAuxiliar === 1) {
+            scrollAuxiliar--;
         }
     } else if (text.match(filter) != null) {
         let words = text.split(" ");
@@ -117,17 +132,18 @@ function decryptText() {
         }
         let outcome = postWords.join(" ");
         displayResult.innerHTML = outcome;
-        if (auxiliar === 1) {
+        if (scrollAuxiliar === 1) {
             null;
         } else {
-            auxiliar++;
+            scrollAuxiliar++;
         }
     } else {
         showError("Remember: only lowercase, no accentuation nor other special characters!");
-        if (auxiliar === 1) {
-            auxiliar--;
+        if (scrollAuxiliar === 1) {
+            scrollAuxiliar--;
         }
     }
+    unhideBottom();
 }
 
 // Easter Egg (It's Sherlock Time!)
