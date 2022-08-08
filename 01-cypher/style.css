@@ -236,6 +236,7 @@ html, body {
     display: table-cell;
     vertical-align: middle;
     width: 85%;
+    max-width: 85%;
     height: 45px;
     color: white;
     background: #ff4d4f;
@@ -275,6 +276,7 @@ html, body {
     display: table-cell;
     vertical-align: middle;
     width: 85%;
+    max-width: 85%;
     height: 45px;
     color: white;
     background: #52c41a;
