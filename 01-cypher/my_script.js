@@ -2,16 +2,27 @@
 const textToEncrypt = document.getElementById("inputArea");
 const encryptButton = document.getElementById("encrypt");
 const decryptButton = document.getElementById("decrypt");
-const displayResult = document.getElementById("outcomeDisplay");
-const filter = "^[a-z !ñ]+$";
-let error = 0;
+const displayResult = document.getElementById("output");
+// Regex accepts range from a to z, ñ and linebreaks
+const filter = "^[a-z ñ\r\n]+$";
+// Auxiliary variable for scrolling proper behaviour
+let auxiliar = 0;
+
+// Resize input text according to content
+function adjustHeight(textToEncrypt){
+    if (textToEncrypt.value === "") {
+        textToEncrypt.style.height = "60px"
+    } else {
+        textToEncrypt.style.height = (textToEncrypt.scrollHeight > textToEncrypt.clientHeight) ? `${textToEncrypt.scrollHeight}px` : `${(textToEncrypt.offsetHeight - 4)}px`;
+    }
+}
 
 function scrollUp() {
     window.scrollTo(0, 0);
 }
 
 function scrollDown() {
-    if (error === 1) {
+    if (auxiliar === 1) {
         window.scrollTo(0, document.body.scrollHeight);
     } else {
         null;
@@ -35,19 +46,20 @@ function encryptText() {
         }
         let outcome = postWords.join(" ");
         displayResult.innerHTML = outcome;
-        if (error === 1) {
+        if (auxiliar === 1) {
             null;
         } else {
-            error++;
+            auxiliar++;
         }
     } else {
-        alert("Remember: only lowercase characters, no accentuation allowed.");
-        if (error === 1) {
-            error--;
+        alert("Remember: only lowercase, no special characters.");
+        if (auxiliar === 1) {
+            auxiliar--;
         }
     }
-    console.log(error);
-    return error;
+    // auxiliar tracking
+    console.log(auxiliar);
+    return auxiliar;
 }
 
 function decryptText() {
@@ -61,20 +73,20 @@ function decryptText() {
             word = word.replaceAll("imes", "i");
             word = word.replaceAll("ai", "a");
             word = word.replaceAll("ober", "o");
-            word = word.replaceAll("ufat"), "u";
+            word = word.replaceAll("ufat", "u");
             postWords.push(word);
         }
         let outcome = postWords.join(" ");
         displayResult.innerHTML = outcome;
-        if (error === 1) {
+        if (auxiliar === 1) {
             null;
         } else {
-            error++;
+            auxiliar++;
         }
     } else {
         alert("Remember: only lowercase characters, no accentuation allowed.");
-        if (error === 1) {
-            error--;
+        if (auxiliar === 1) {
+            auxiliar--;
         }
     }
 }
@@ -84,3 +96,5 @@ function copyText() {
     navigator.clipboard.writeText(copiedMessage);
     alert("Message successfully copied to your clipboard!");
 }
+
+// Easter Egg (It's Sherlock Time!)

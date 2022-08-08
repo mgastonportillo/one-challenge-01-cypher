@@ -1,4 +1,5 @@
 /* MOBILE FIRST */
+/* Basic setup of the document */
 * {
     margin: 0;
 }
@@ -7,7 +8,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Basic setup of the body */
 .container {
     display: flex;
     flex-direction: column;
@@ -15,69 +15,99 @@ html {
 
 .topPanel {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: #f3f5fc;
     height: 100vh;
     max-height: 100vh;
-    justify-content: center;
-    align-items: center;
 }
 
 .bottomPanel {
     display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
     background-color: #ffffff;
     height: 100vh;
     max-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
-/* Logos and title arrangement */
+/* Logos arrangement */
 .logos {
-    position: absolute;
+    position: fixed;
+    top: 0;
     display: flex;
-    align-items: flex-start;
-    margin: 25px;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.leftLogos {
+    padding: 25px;
+    display: flex;
+}
+
+.rightLogos img {
+    padding: 25px;
+    height: 64px;
+    width: 64px;
+}
+
+#galeLogo {
+    height: 40px;
+    width: 40px;
+}
+
+#xCollab {
+    margin: 20px 7px 0 7px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0a3871;
     -webkit-user-select: none;       
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-#xCollab {
-    margin: 20px 5px 0 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #0a3871;
+#aluraLogo {
+    height: 33px;
+    width: 33px;
 }
 
-.title {
+.info {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    position: absolute;
-    margin: 25px;
-    top: 0;
-    right: 0;
-    color: #0a3871;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: x-large;
+    font-size: 11px;
+    margin-bottom: 30px;
+    gap: 5px;
+    color: #67808e;
 }
 
-#encryptLogo {
-    height: 60px;
-    width: 60px;
+#infoIcon {
+    height: 13px;
+    width: 13px;
 }
 
 /* Input field */
+.inputDisplay {
+    padding-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
 #inputArea {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: x-large;
+    font-size: large;
     color: #0a3871;
-    padding-top: 25%;
     text-align: center;
     background: transparent;
     border: none;
     resize: none;
+    min-height: 60px;
+    overflow-y: auto;
+    page-break-before: avoid;
 }
 
 #inputArea:focus {
@@ -85,27 +115,26 @@ html {
 }
 
 /* Output field */
-#outcomeDisplay {
-    margin: 0 15px 0 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;;
-    font-size: x-large;
+#outputDisplay {
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-grow: 2;
+    width: auto;
+}
+
+#output {
+    padding-top: 15vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+    font-size: large;
     text-align: center;
     color: #0d4a97;
+    width: 85%;
+    max-width: 85%;
+    overflow-wrap: break-word;
 }
 
 /* Buttons */
-.encdecButtons {
-    position: absolute;
-    bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 50px;
-}
-
 .button {
     border-radius: 15px;
     width: 100px;
@@ -118,13 +147,13 @@ html {
     cursor: pointer;
 }
 
-#copyText {
-    position: relative;
-    left: 50%;
-    bottom: 60px;
-    margin-left: -45px;
-    color: white;
-    background-color: #0a3871;
+/* Top buttons */
+.topButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 40px;
 }
 
 #encrypt {
@@ -137,12 +166,16 @@ html {
     background-color: #d8dfe8;
 }
 
-/* Scroll up */
+/* Bottom buttons */
+.bottomButtons {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 #scrollUp {
-    position: relative;
-    left: 50%;
-    bottom: 30px;
-    margin-left: -20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,6 +196,11 @@ html {
 #scrollUp:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+#copyText {
+    color: white;
+    background-color: #0a3871;
 }
 
 /* Media queries */
