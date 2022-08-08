@@ -1,11 +1,14 @@
 /* MOBILE FIRST */
 /* Basic setup of the document */
 
-html, body {
+body {
     margin: 0;
     /* Fallback */
     height: 100vh;
     height: 100dvh;
+    min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
     scroll-behavior: smooth;
 }
 
