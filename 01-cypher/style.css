@@ -3,6 +3,7 @@
 
 html, body {
     margin: 0;
+    height: 100vh;
     height: 100dvh;
     scroll-behavior: smooth;
 }
@@ -19,7 +20,9 @@ html, body {
     align-items: center;
     background-color: #f3f5fc;
     height: 100vh;
+    height: 100dvh;
     max-height: 100vh;
+    max-height: 100dvh;
 }
 
 .bottomPanel {
@@ -29,7 +32,9 @@ html, body {
     flex-direction: column;
     background-color: #ffffff;
     height: 100vh;
+    height: 100dvh;
     max-height: 100vh;
+    max-height: 100dvh;
 }
 
 /* Logos arrangement */
