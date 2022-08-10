@@ -42,12 +42,10 @@ if (xAxis >= 1024) {
 function reportWindowSize() {
     xAxis = window.innerWidth;
     yAxis = window.innerHeight;
-    console.log(xAxis,yAxis)
 }
 
 window.addEventListener('resize', function(event) {
     reportWindowSize();
-    console.log(xAxis, yAxis);
     if (xAxis >= 1024) {
         const logos = document.querySelector(".rightLogos");
         bottomPanel.classList.remove("hide");
@@ -134,9 +132,7 @@ function unhideBottom() {
 }
 
 
-
 // MAIN FUNCTIONS
-
 
 
 function encryptText() {
@@ -175,8 +171,6 @@ function encryptText() {
         }
     }
     unhideBottom();
-    // scrollAuxiliar tracking
-    console.log(`Aux = ${scrollAuxiliar}`);
     return scrollAuxiliar;
 }
 
@@ -215,6 +209,5 @@ function decryptText() {
         }
     }
     unhideBottom();
-    console.log(`Aux = ${scrollAuxiliar}`);
     return scrollAuxiliar;
 }
