@@ -296,6 +296,25 @@ html, body {
     user-select: none;
 }
 
+.copyError {
+    z-index: 1;
+    padding: 10px;
+    font-size: medium;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 85%;
+    height: 45px;
+    color: white;
+    background: #ff4d4f;
+    border-radius: 15px;
+    animation: shake 0.2s;
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 #copyText {
     width: 160px;
 }
@@ -370,7 +389,8 @@ html, body {
     }
 
     .error,
-    .copied {
+    .copied,
+    .copyError {
         padding: 50px;
         border-radius: 32px;
         font-size: larger;
