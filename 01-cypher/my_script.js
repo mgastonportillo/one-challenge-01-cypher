@@ -4,6 +4,7 @@ textToEncrypt.value = "";
 const encryptButton = document.getElementById("encrypt");
 const decryptButton = document.getElementById("decrypt");
 const displayResult = document.getElementById("output");
+const travolta = document.getElementById("travolta");
 const bottomPanel = document.querySelector(".bottomPanel");
 const encryptLogo = document.querySelector(".rightLogos");
 const cloneEncryptLogo = encryptLogo.cloneNode(true);
@@ -34,6 +35,7 @@ if (xAxis >= 1024) {
     outputContainer.appendChild(cloneEncryptLogo);
     logos.classList.add("hide");
     displayResult.classList.add("hide");
+    travolta.classList.add("hide");
 } else if (xAxis < 1024) {
     cloneEncryptLogo.classList.add("hide");
 }
@@ -51,11 +53,13 @@ window.addEventListener('resize', function(event) {
         logos.classList.add("hide");
         displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
+        travolta.classList.add("hide");
     } else {
         const logos = document.querySelector(".rightLogos");
         logos.classList.remove("hide");
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
+        travolta.classList.remove("hide");
     }
 }, true);
 
@@ -132,11 +136,21 @@ function showError(errorMsg) {
 
 // Unhide bottomPanel when there's an outcome
 function unhideBottom() {
-    if (scrollAuxiliar === 1) {
-        cloneEncryptLogo.classList.add("hide");
-        displayResult.classList.remove("hide");
-    } else if (scrollAuxiliar === 0) {
+    if (xAxis >= 1024) {
+        const logos = document.querySelector(".rightLogos");
+        outputContainer.appendChild(cloneEncryptLogo);
+        logos.classList.add("hide");
+        displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
+        travolta.classList.add("hide");
+    } else {
+        const logos = document.querySelector(".rightLogos");
+        logos.classList.remove("hide");
+        displayResult.classList.remove("hide");
+        cloneEncryptLogo.classList.add("hide");
+        if (scrollAuxiliar === 1) {
+            travolta.classList.add("hide");
+        }
     }
 }
 
@@ -149,9 +163,11 @@ function encryptText() {
     if (xAxis >= 1024) {
         displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
+        travolta.classList.add("hide");
     } else {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
+        travolta.classList.remove("hide");
     }
     let text = textToEncrypt.value;
     if (text == "") {
@@ -193,9 +209,11 @@ function decryptText() {
     if (xAxis >= 1024) {
         displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
+        travolta.classList.add("hide");
     } else {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
+        travolta.classList.remove("hide");
     }
     let text = textToEncrypt.value;
     if (text == "") {
