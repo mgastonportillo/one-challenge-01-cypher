@@ -120,12 +120,12 @@ function showError(errorMsg) {
 // Unhide bottomPanel when there's an outcome
 function unhideBottom() {
     if (displayResult.innerHTML != "") {
-        clonedEncrypt.classList.add("hide");
+        cloneEncryptLogo.classList.add("hide");
         bottomPanel.classList.remove("hide");
         displayResult.classList.remove("hide");
     } else if ((displayResult.innerHTML == "") && (xAxis < 1024)) {
         bottomPanel.classList.add("hide");
-        clonedEncrypt.classList.remove("hide");
+        cloneEncryptLogo.classList.remove("hide");
     } else if (xAxis >= 1024) {
         bottomPanel.classList.remove("hide");
     }
@@ -138,8 +138,8 @@ function unhideBottom() {
 function encryptText() {
     displayResult.innerHTML = "";
     displayResult.classList.add("hide");
-    clonedEncrypt.classList.remove("hide");
-    let text = textToEncrypt.value
+    cloneEncryptLogo.classList.remove("hide");
+    let text = textToEncrypt.value;
     if (text == "") {
         showError("Try typing something?");
         if (scrollAuxiliar === 1) {
@@ -177,8 +177,8 @@ function encryptText() {
 function decryptText() {
     displayResult.innerHTML = "";
     displayResult.classList.add("hide");
-    clonedEncrypt.classList.remove("hide");
-    let text = textToEncrypt.value
+    cloneEncryptLogo.classList.remove("hide");
+    let text = textToEncrypt.value;
     if (text == "") {
         showError("Try typing something?");
         if (scrollAuxiliar === 1) {
