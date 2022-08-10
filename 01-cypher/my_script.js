@@ -119,14 +119,14 @@ function showError(errorMsg) {
 
 // Unhide bottomPanel when there's an outcome
 function unhideBottom() {
-    if (displayResult.innerHTML != "") {
+    if (scrollAuxiliar === 1) {
         cloneEncryptLogo.classList.add("hide");
         bottomPanel.classList.remove("hide");
         displayResult.classList.remove("hide");
-    } else if ((displayResult.innerHTML == "") && (xAxis < 1024)) {
+    } else if ((scrollAuxiliar === 0) && (xAxis < 1024)) {
         bottomPanel.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
-    } else if (xAxis >= 1024) {
+    } else {
         bottomPanel.classList.remove("hide");
     }
 }
