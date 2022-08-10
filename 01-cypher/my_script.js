@@ -218,5 +218,3 @@ function decryptText() {
     console.log(`Aux = ${scrollAuxiliar}`);
     return scrollAuxiliar;
 }
-
-// Easter Egg (It's Sherlock Time!)
