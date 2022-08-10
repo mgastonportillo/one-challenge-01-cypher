@@ -320,6 +320,7 @@ html, body {
 }
 
 #travolta {
+    max-height: 250px;
     margin-bottom: 10px;
 }
 
