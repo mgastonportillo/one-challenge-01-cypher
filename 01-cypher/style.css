@@ -319,6 +319,10 @@ html, body {
     width: 160px;
 }
 
+#travolta {
+    margin-bottom: 10px;
+}
+
 @keyframes createBox {
     from {transform: scale(0);}
     to {transform: scale(1);}
