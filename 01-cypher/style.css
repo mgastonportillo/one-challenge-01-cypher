@@ -29,6 +29,10 @@ html, body {
     min-height: calc(var(--vh) * 100);
 }
 
+#bg-bigscreen {
+    display: none;
+}
+
 /* Logos arrangement */
 .logos {
     position: fixed;
@@ -91,7 +95,7 @@ html, body {
 
 /* Input field */
 .inputDisplay {
-    padding-top: 20vh;
+    padding-top: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,6 +123,7 @@ html, body {
 #outputDisplay {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: space-around;
     flex-grow: 2;
     width: auto;
@@ -218,13 +223,14 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
+    height: 65px;
     width: 90%;
     max-width: 50vh;
     display: table;
 }
 
 .error {
+    z-index: 1;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: small;
@@ -269,6 +275,7 @@ html, body {
 }
 
 .copied {
+    z-index: 1;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: small;
@@ -297,3 +304,100 @@ html, body {
 }
 
 /* Media queries */
+/* Tablet */
+@media screen and (min-width: 768px) {
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    body {
+        background: #f3f5fc;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+
+    .topPanel {
+        flex: 3;
+        padding-left: calc(1% + 2em);
+    }
+
+    .inputDisplay {
+        padding: 0;
+    }
+
+    #inputArea {
+        font-size: x-large;
+        text-align: left;
+    }
+
+    #output {
+        font-size: x-large;
+    }
+
+    .bottomPanel {
+        flex: 2;
+        margin: 25px calc(1% + 6em) 25px 0;
+        border-radius: 32px;
+        background-color: white;
+        min-height: calc((var(--vh) * 100) - 50);
+        box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    }
+
+    .logos {
+        position: relative;
+        max-width: 80%;
+    }
+
+    .error,
+    .copied {
+        padding: 50px;
+        border-radius: 32px;
+        font-size: larger;
+        font-weight: bold;
+        position: absolute;
+        width: 550px;
+        height: auto;
+        margin-top: -75px;
+        margin-left: -325px;
+        left: 50%;
+        top: 50%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .topButtons {
+        padding-bottom: 50px;
+    }
+
+    .bottomButtons {
+        padding-bottom: 25px;
+    }
+
+    #scrollUp {
+        position: absolute;
+        display: none;
+    }
+    
+    .rightLogos {
+        order: -1;
+    }
+
+    .rightLogos img {
+        padding: 270px 0 0 0;
+        height: 100px;
+        width: 100px;
+    }
+    .rightLogos::after {
+        color: #0a3871;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        align-content: center;
+        content: "Nothing here";
+        position: absolute;
+        margin: 5PX 0 0 -8px;
+    }
+
+}
