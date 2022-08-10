@@ -36,7 +36,7 @@ if (xAxis >= 1024) {
     logos.classList.add("hide");
     displayResult.classList.add("hide");
     travolta.classList.add("hide");
-} else if (xAxis < 1024) {
+} else {
     cloneEncryptLogo.classList.add("hide");
 }
 
@@ -59,7 +59,6 @@ window.addEventListener('resize', function(event) {
         logos.classList.remove("hide");
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
-        travolta.classList.remove("hide");
     }
 }, true);
 
