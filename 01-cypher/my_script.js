@@ -36,11 +36,13 @@ if (xAxis >= 1024) {
     bottomPanel.classList.remove("hide");
     outputContainer.appendChild(cloneEncryptLogo);
     logos.classList.add("hide");
+    displayResult.classList.add("hide");
 }
 
 function reportWindowSize() {
     xAxis = window.innerWidth;
     yAxis = window.innerHeight;
+    console.log(xAxis,yAxis)
 }
 
 window.addEventListener('resize', function(event) {
@@ -119,10 +121,10 @@ function showError(errorMsg) {
 
 // Unhide bottomPanel when there's an outcome
 function unhideBottom() {
-    const clonedEncrypt = document.getElementById("clonedEncrypt");
     if (displayResult.innerHTML != "") {
         clonedEncrypt.classList.add("hide");
         bottomPanel.classList.remove("hide");
+        displayResult.classList.remove("hide");
     } else if ((displayResult.innerHTML == "") && (xAxis < 1024)) {
         bottomPanel.classList.add("hide");
         clonedEncrypt.classList.remove("hide");
@@ -139,6 +141,8 @@ function unhideBottom() {
 
 function encryptText() {
     displayResult.innerHTML = "";
+    displayResult.classList.add("hide");
+    clonedEncrypt.classList.remove("hide");
     let text = textToEncrypt.value
     if (text == "") {
         showError("Try typing something?");
@@ -178,6 +182,8 @@ function encryptText() {
 
 function decryptText() {
     displayResult.innerHTML = "";
+    displayResult.classList.add("hide");
+    clonedEncrypt.classList.remove("hide");
     let text = textToEncrypt.value
     if (text == "") {
         showError("Try typing something?");

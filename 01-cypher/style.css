@@ -152,6 +152,10 @@ html, body {
     border: 1px solid #0a3871;
     color: white;
     background-color: #0a3871;
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .button:hover {
@@ -304,11 +308,6 @@ html, body {
 }
 
 /* Media queries */
-/* Tablet */
-@media screen and (min-width: 768px) {
-
-}
-
 /* Desktop */
 @media screen and (min-width: 1024px) {
     body {
@@ -333,7 +332,12 @@ html, body {
         text-align: left;
     }
 
+    #outputDisplay {
+        width: 450px;
+    }
+
     #output {
+        padding-top: 0;
         font-size: x-large;
     }
 
@@ -363,7 +367,7 @@ html, body {
         margin-top: -75px;
         margin-left: -325px;
         left: 50%;
-        top: 50%;
+        bottom: 50%;
         display: table-cell;
         vertical-align: middle;
     }
@@ -386,10 +390,11 @@ html, body {
     }
 
     .rightLogos img {
-        padding: 270px 0 0 0;
+        padding: 50px 0 0 0;
         height: 100px;
         width: 100px;
     }
+
     .rightLogos::after {
         color: #0a3871;
         font-weight: bold;
