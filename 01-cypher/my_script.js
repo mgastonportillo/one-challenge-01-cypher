@@ -1,13 +1,19 @@
 const textToEncrypt = document.getElementById("inputArea");
+// Clears the input field to prevent cache issues on display
+textToEncrypt.value = "";
 const encryptButton = document.getElementById("encrypt");
 const decryptButton = document.getElementById("decrypt");
 const displayResult = document.getElementById("output");
 const bottomPanel = document.querySelector(".bottomPanel");
+const encryptLogo = document.querySelector(".rightLogos");
+const cloneEncryptLogo = encryptLogo.cloneNode(true);
+cloneEncryptLogo.id = "clonedEncrypt";
+const outputContainer = document.getElementById("outputDisplay");
 // Regex accepts range from a to z, ñ, spaces and linebreaks
 const filter = "^[a-z ñ\r\n]+$";
-
 // Auxiliary variable for scrollDown() proper behaviour
 let scrollAuxiliar = 0;
+
 // Scrolling on click event
 function scrollDown() {
     if (scrollAuxiliar === 1) {
@@ -21,6 +27,37 @@ function scrollUp() {
     window.scrollTo(0, 0);
 }
 
+// Windows resize tracking
+let xAxis = window.innerWidth;
+let yAxis = window.innerHeight;
+
+if (xAxis >= 1024) {
+    const logos = document.querySelector(".rightLogos");
+    bottomPanel.classList.remove("hide");
+    outputContainer.appendChild(cloneEncryptLogo);
+    logos.classList.add("hide");
+}
+
+function reportWindowSize() {
+    xAxis = window.innerWidth;
+    yAxis = window.innerHeight;
+}
+
+window.addEventListener('resize', function(event) {
+    reportWindowSize();
+    console.log(xAxis, yAxis);
+    if (xAxis >= 1024) {
+        const logos = document.querySelector(".rightLogos");
+        bottomPanel.classList.remove("hide");
+        outputContainer.appendChild(cloneEncryptLogo);
+        logos.classList.add("hide");
+    } else {
+        const logos = document.querySelector(".rightLogos");
+        bottomPanel.classList.add("hide");
+        logos.classList.remove("hide");
+    }
+}, true);
+
 // Resize input text according to content
 function adjustHeight() {
     if (textToEncrypt.value === "") {
@@ -30,20 +67,19 @@ function adjustHeight() {
     }
 }
 
+
 // Fix mobile screen issues
 function calculateVh() {
     var vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
-
 // Initial calculation
 calculateVh();
-
 // Re-calculate on resize
 window.addEventListener("resize", calculateVh);
-
 // Re-calculate on device orientation change
 window.addEventListener("orientationchange", calculateVh);
+
 
 // Copy to clipboard
 function confirmCopy(msgCopied) {
@@ -54,14 +90,18 @@ function confirmCopy(msgCopied) {
         copiedDiv.classList.add("copied");
         copiedDiv.textContent = msgCopied;            
         copiedContainer.appendChild(copiedDiv);
-        setTimeout(() => {copiedDiv.remove();}, 4000);
+        setTimeout(() => {copiedDiv.remove();}, 3000);
     }
 }
 
 function copyText() {
-    const copiedMsg = displayResult.innerHTML;
-    navigator.clipboard.writeText(copiedMsg);
-    confirmCopy("Text successfully copied to your clipboard!");
+    if (scrollAuxiliar === 1) {
+        const copiedMsg = displayResult.innerHTML;
+        navigator.clipboard.writeText(copiedMsg);
+        confirmCopy("Text successfully copied to your clipboard!");
+    } else {
+        showError("There's nothing to copy yet.");
+    }
 }
 
 // Error notification
@@ -73,20 +113,30 @@ function showError(errorMsg) {
         errorDiv.classList.add("error");
         errorDiv.textContent = errorMsg;            
         errorContainer.appendChild(errorDiv);
-        setTimeout(() => {errorDiv.remove();}, 4000);
+        setTimeout(() => {errorDiv.remove();}, 3000);
     }
 }
 
 // Unhide bottomPanel when there's an outcome
 function unhideBottom() {
+    const clonedEncrypt = document.getElementById("clonedEncrypt");
     if (displayResult.innerHTML != "") {
+        clonedEncrypt.classList.add("hide");
         bottomPanel.classList.remove("hide");
-    } else {
+    } else if ((displayResult.innerHTML == "") && (xAxis < 1024)) {
         bottomPanel.classList.add("hide");
+        clonedEncrypt.classList.remove("hide");
+    } else if (xAxis >= 1024) {
+        bottomPanel.classList.remove("hide");
     }
 }
 
-// Main functions
+
+
+// MAIN FUNCTIONS
+
+
+
 function encryptText() {
     displayResult.innerHTML = "";
     let text = textToEncrypt.value
@@ -122,7 +172,7 @@ function encryptText() {
     }
     unhideBottom();
     // scrollAuxiliar tracking
-    console.log(scrollAuxiliar);
+    console.log(`Aux = ${scrollAuxiliar}`);
     return scrollAuxiliar;
 }
 
@@ -159,6 +209,8 @@ function decryptText() {
         }
     }
     unhideBottom();
+    console.log(`Aux = ${scrollAuxiliar}`);
+    return scrollAuxiliar;
 }
 
 // Easter Egg (It's Sherlock Time!)
