@@ -18,8 +18,6 @@ let scrollAuxiliar = 0;
 function scrollDown() {
     if (scrollAuxiliar === 1) {
         window.scrollTo(0, document.body.scrollHeight);
-    } else {
-        null;
     }
 }
 
@@ -123,11 +121,9 @@ function unhideBottom() {
         cloneEncryptLogo.classList.add("hide");
         bottomPanel.classList.remove("hide");
         displayResult.classList.remove("hide");
-    } else if ((scrollAuxiliar === 0) && (xAxis < 1024)) {
+    } else if (scrollAuxiliar === 0) {
         bottomPanel.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
-    } else {
-        bottomPanel.classList.remove("hide");
     }
 }
 
