@@ -31,10 +31,11 @@ let yAxis = window.innerHeight;
 
 if (xAxis >= 1024) {
     const logos = document.querySelector(".rightLogos");
-    bottomPanel.classList.remove("hide");
     outputContainer.appendChild(cloneEncryptLogo);
     logos.classList.add("hide");
     displayResult.classList.add("hide");
+} else if (xAxis < 1024) {
+    cloneEncryptLogo.classList.add("hide");
 }
 
 function reportWindowSize() {
@@ -46,13 +47,15 @@ window.addEventListener('resize', function(event) {
     reportWindowSize();
     if (xAxis >= 1024) {
         const logos = document.querySelector(".rightLogos");
-        bottomPanel.classList.remove("hide");
         outputContainer.appendChild(cloneEncryptLogo);
         logos.classList.add("hide");
+        displayResult.classList.add("hide");
+        cloneEncryptLogo.classList.remove("hide");
     } else {
         const logos = document.querySelector(".rightLogos");
-        bottomPanel.classList.add("hide");
         logos.classList.remove("hide");
+        displayResult.classList.remove("hide");
+        cloneEncryptLogo.classList.add("hide");
     }
 }, true);
 
@@ -92,13 +95,25 @@ function confirmCopy(msgCopied) {
     }
 }
 
+function copyError(errorMsg) {
+    const errorExists = document.querySelector(".copyError");
+    if(!errorExists) {
+        const errorContainer = document.getElementById("copyConfirm");
+        const errorDiv = document.createElement('div');
+        errorDiv.classList.add("copyError");
+        errorDiv.textContent = errorMsg;            
+        errorContainer.appendChild(errorDiv);
+        setTimeout(() => {errorDiv.remove();}, 3000);
+    }
+}
+
 function copyText() {
     if (scrollAuxiliar === 1) {
         const copiedMsg = displayResult.innerHTML;
         navigator.clipboard.writeText(copiedMsg);
         confirmCopy("Text successfully copied to your clipboard!");
     } else {
-        showError("Uhhh... there's nothing to copy...");
+        copyError("Uhhh... there's nothing to copy...");
     }
 }
 
@@ -119,10 +134,8 @@ function showError(errorMsg) {
 function unhideBottom() {
     if (scrollAuxiliar === 1) {
         cloneEncryptLogo.classList.add("hide");
-        bottomPanel.classList.remove("hide");
         displayResult.classList.remove("hide");
     } else if (scrollAuxiliar === 0) {
-        bottomPanel.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
     }
 }
@@ -133,8 +146,13 @@ function unhideBottom() {
 
 function encryptText() {
     displayResult.innerHTML = "";
-    displayResult.classList.add("hide");
-    cloneEncryptLogo.classList.remove("hide");
+    if (xAxis >= 1024) {
+        displayResult.classList.add("hide");
+        cloneEncryptLogo.classList.remove("hide");
+    } else {
+        displayResult.classList.remove("hide");
+        cloneEncryptLogo.classList.add("hide");
+    }
     let text = textToEncrypt.value;
     if (text == "") {
         showError("Try typing something?");
@@ -172,8 +190,13 @@ function encryptText() {
 
 function decryptText() {
     displayResult.innerHTML = "";
-    displayResult.classList.add("hide");
-    cloneEncryptLogo.classList.remove("hide");
+    if (xAxis >= 1024) {
+        displayResult.classList.add("hide");
+        cloneEncryptLogo.classList.remove("hide");
+    } else {
+        displayResult.classList.remove("hide");
+        cloneEncryptLogo.classList.add("hide");
+    }
     let text = textToEncrypt.value;
     if (text == "") {
         showError("Try typing something?");
