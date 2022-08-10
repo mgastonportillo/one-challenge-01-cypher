@@ -61,7 +61,7 @@ window.addEventListener('resize', function(event) {
 // Resize input text according to content
 function adjustHeight() {
     if (textToEncrypt.value === "") {
-        textToEncrypt.style.height = "60px";
+        textToEncrypt.style.height = "auto";
     } else {
         textToEncrypt.style.height = (textToEncrypt.scrollHeight > textToEncrypt.clientHeight) ? `${textToEncrypt.scrollHeight}px` : `${textToEncrypt.offsetHeight - 4}px`;
     }
@@ -100,7 +100,7 @@ function copyText() {
         navigator.clipboard.writeText(copiedMsg);
         confirmCopy("Text successfully copied to your clipboard!");
     } else {
-        showError("There's nothing to copy yet.");
+        showError("Uhhh... there's nothing to copy...");
     }
 }
 
