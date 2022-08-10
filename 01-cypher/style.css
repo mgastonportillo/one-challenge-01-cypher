@@ -387,6 +387,7 @@ html, body {
     }
 
     .button {
+        font-weight: bold;
         width: calc(130px + 2rem);
     }
 
