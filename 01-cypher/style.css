@@ -1,7 +1,12 @@
 /* MOBILE FIRST */
 /* Basic setup of the document */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 html, body {
     margin: 0;
+    box-sizing: border-box;
     min-height: calc(var(--vh) * 100);
     scroll-behavior: smooth;
 }
@@ -65,7 +70,6 @@ html, body {
 
 #xCollab {
     margin: 20px 7px 0 7px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #0a3871;
 }
 
@@ -75,7 +79,6 @@ html, body {
 }
 
 .infoMsg {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     font-size: 11px;
     margin-bottom: 30px;
@@ -103,7 +106,6 @@ html, body {
 }
 
 #inputArea {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     color: #0a3871;
     text-align: center;
@@ -131,7 +133,6 @@ html, body {
 
 #output {
     padding-top: 15vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     text-align: center;
     color: #0d4a97;
@@ -147,11 +148,12 @@ html, body {
 /* Buttons */
 .button {
     border-radius: 15px;
-    width: 100px;
     height: 50px;
+    width: calc(100px + 2rem);
     border: 1px solid #0a3871;
     color: white;
     background-color: #0a3871;
+    font-weight: bold;
     -webkit-user-select: none;       
     -moz-user-select: none;
     -ms-user-select: none;
@@ -227,7 +229,6 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 65px;
     width: 90%;
     max-width: 50vh;
     display: table;
@@ -236,7 +237,6 @@ html, body {
 .error {
     z-index: 1;
     padding: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: small;
     text-align: center;
     display: table-cell;
@@ -281,7 +281,6 @@ html, body {
 .copied {
     z-index: 1;
     padding: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: small;
     text-align: center;
     display: table-cell;
@@ -336,8 +335,10 @@ html, body {
     }
 
     #inputArea {
+        max-width: 70%;
+        font-weight: 500;
         font-size: x-large;
-        text-align: left;
+        text-align: justify;
     }
 
     #outputDisplay {
@@ -348,6 +349,7 @@ html, body {
     #output {
         padding-top: 0;
         font-size: x-large;
+        font-weight: 500;
     }
 
     .bottomPanel {
@@ -381,6 +383,10 @@ html, body {
         vertical-align: middle;
     }
 
+    .button {
+        width: calc(130px + 2rem);
+    }
+
     .topButtons {
         padding-bottom: 50px;
     }
@@ -406,12 +412,21 @@ html, body {
 
     .rightLogos::after {
         color: #0a3871;
-        font-weight: bold;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: medium;
         align-content: center;
         content: "Nothing here";
         position: absolute;
-        margin: 5PX 0 0 -8px;
+        margin: 5px 0 0 -2px;
+    }
+
+    .infoMsg {
+        font-size: medium;
+    }
+
+    #infoIcon {
+        padding-top: 20px;
+        height: 15px;
+        width: 15px;
     }
 
 }
