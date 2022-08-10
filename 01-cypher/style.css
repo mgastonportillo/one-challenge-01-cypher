@@ -153,7 +153,7 @@ html, body {
     border: 1px solid #0a3871;
     color: white;
     background-color: #0a3871;
-    font-weight: bold;
+    font-weight: medium;
     -webkit-user-select: none;       
     -moz-user-select: none;
     -ms-user-select: none;
@@ -237,7 +237,7 @@ html, body {
 .error {
     z-index: 1;
     padding: 10px;
-    font-size: small;
+    font-size: medium;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -272,7 +272,6 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 62px;
     width: 90%;
     max-width: 50vh;
     display: table;
@@ -281,7 +280,7 @@ html, body {
 .copied {
     z-index: 1;
     padding: 10px;
-    font-size: small;
+    font-size: medium;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -295,6 +294,10 @@ html, body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#copyText {
+    width: 160px;
 }
 
 @keyframes createBox {
