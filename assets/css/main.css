@@ -63,8 +63,8 @@ html, body {
     width: 64px;
 }
 
-#galeLogo {
-    height: 40px;
+#galeLogo img {
+    height: 64.29px;
     width: 40px;
 }
 
@@ -74,7 +74,7 @@ html, body {
 }
 
 #aluraLogo {
-    height: 33px;
+    height: 52.27px;
     width: 33px;
 }
 
