@@ -1,5 +1,5 @@
 <h1 align="center">ONE - Challenge #1: Encriptador</h1>
-<p>Primer proyecto "desafío" del curso ONE (Oracle Next Education).</p>
+<p align="center">Primer proyecto "desafío" del curso ONE (Oracle Next Education)</p>
 <hr>
 <h2>Preview</h2>
 <a align="center"><img src="https://user-images.githubusercontent.com/106234166/184077569-c258ae8f-5bc6-430a-9e03-e956263d55ec.png"></a>
