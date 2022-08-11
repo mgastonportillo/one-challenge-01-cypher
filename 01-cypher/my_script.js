@@ -4,7 +4,6 @@ textToEncrypt.value = "";
 const encryptButton = document.getElementById("encrypt");
 const decryptButton = document.getElementById("decrypt");
 const displayResult = document.getElementById("output");
-const travolta = document.getElementById("travolta");
 const bottomPanel = document.querySelector(".bottomPanel");
 const encryptLogo = document.querySelector(".rightLogos");
 const cloneEncryptLogo = encryptLogo.cloneNode(true);
@@ -14,6 +13,7 @@ const outputContainer = document.getElementById("outputDisplay");
 const filter = "^[a-z ñ\r\n]+$";
 // Auxiliary variable for scrollDown() proper behaviour
 let scrollAuxiliar = 0;
+
 
 // Scrolling on click event
 function scrollDown() {
@@ -26,6 +26,7 @@ function scrollUp() {
     window.scrollTo(0, 0);
 }
 
+
 // Windows resize tracking
 let xAxis = window.innerWidth;
 let yAxis = window.innerHeight;
@@ -35,7 +36,6 @@ if (xAxis >= 1024) {
     outputContainer.appendChild(cloneEncryptLogo);
     logos.classList.add("hide");
     displayResult.classList.add("hide");
-    travolta.classList.add("hide");
 } else {
     cloneEncryptLogo.classList.add("hide");
 }
@@ -49,6 +49,7 @@ window.addEventListener('resize', function(event) {
     reportWindowSize();
     unhideBottom();
 }, true);
+
 
 // Resize input text according to content
 function adjustHeight() {
@@ -125,26 +126,26 @@ function showError(errorMsg) {
 function unhideBottom() {
     if (xAxis >= 1024 && scrollAuxiliar === 0) {
         const logos = document.querySelector(".rightLogos");
-        outputContainer.appendChild(cloneEncryptLogo);
         logos.classList.add("hide");
+        outputContainer.appendChild(cloneEncryptLogo);
         displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
-        travolta.classList.add("hide");
+        bottomPanel.classList.remove("hide");
     } else if (xAxis >= 1024 && scrollAuxiliar === 1) {
         const logos = document.querySelector(".rightLogos");
-        outputContainer.appendChild(cloneEncryptLogo);
         logos.classList.add("hide");
+        outputContainer.appendChild(cloneEncryptLogo);
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
-        travolta.classList.add("hide");
-    }   else if (xAxis < 1024 && scrollAuxiliar === 0) {
+        bottomPanel.classList.remove("hide");
+    } else if (xAxis < 1024 && scrollAuxiliar === 0) {
         const logos = document.querySelector(".rightLogos");
         logos.classList.remove("hide");
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
-        travolta.classList.remove("hide");
+        bottomPanel.classList.add("hide");
     } else {
-        travolta.classList.add("hide");
+        bottomPanel.classList.remove("hide");
     }
 }
 
@@ -157,11 +158,9 @@ function encryptText() {
     if (xAxis >= 1024) {
         displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
-        travolta.classList.add("hide");
     } else {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
-        travolta.classList.remove("hide");
     }
     let text = textToEncrypt.value;
     if (text == "") {
@@ -203,11 +202,9 @@ function decryptText() {
     if (xAxis >= 1024) {
         displayResult.classList.add("hide");
         cloneEncryptLogo.classList.remove("hide");
-        travolta.classList.add("hide");
     } else {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
-        travolta.classList.remove("hide");
     }
     let text = textToEncrypt.value;
     if (text == "") {
