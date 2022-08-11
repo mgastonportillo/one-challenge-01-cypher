@@ -10,7 +10,7 @@ El "challenge" #1 nos presenta como consigna la creación de una aplicación web
 <ul>
 <li>Debe funcionar solo con letras minúsculas.</li>
 <li>No deben ser utilizadas letras con acentos ni caracteres especiales.</li>
-<li>Debe ser posible encriptar una palabra así como también devolver una palabra encriptada a su versión original.<br>Por ejemplo:<br><code>"gato" => "gaitober"<br>"gaitober" => "gato"</code>
+<li>Debe ser posible encriptar una palabra así como también devolver una palabra encriptada a su versión original.<br>Por ejemplo:<br><pre>"gato" => "gaitober"<br>"gaitober" => "gato"</pre>
 </li>
 <li>La página debe tener campos para inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre las dos opciones.</li>
 <li>El resultado debe ser mostrado en la pantalla.</li>
