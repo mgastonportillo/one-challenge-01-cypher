@@ -385,7 +385,7 @@ html, body {
 
     .bottomPanel {
         flex: 2;
-        margin: 25px calc(1% + 6em) 25px 0;
+        margin: 25px calc(2% + 7em) 25px 0;
         border-radius: 32px;
         background-color: white;
         min-height: calc((var(--vh) * 100) - 50);
