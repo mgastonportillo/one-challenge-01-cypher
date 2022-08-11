@@ -37,13 +37,15 @@ El "challenge" #1 nos presenta como desafío la creación de una aplicación web
 </ul>
 Y en orden inverso para la desencriptación.
 <h2>Mi propuesta</h2>
-<p>Decidí encarar el proyecto con las siguientes características:</p>
+<p>Decidí encarar el proyecto con las siguientes características en mente:</p>
 <ul>
 <li>Utilizar el paradigma <a href="https://www.ionos.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/">Mobile First.</a></li>
 <li>Incorporar un diseño responsive que se adapte a pantallas móviles, de tablets y desktop (utilizando dos media queries).</li>
 <li>Hacer que la característica responsive no sólo permita que la aplicación se adapte a diferentes tamaños de pantalla sino que también permita re-posicionar elementos dentro de otros elementos para una visualización más coherente del contenido.</li>
-<li>[MODIFICAR]Limitar al módulo con el resultado de la encriptación sólo sea visible al tener contenido en pantallas móviles y de tablets, y que al generar una encriptación o desencrptación se realice un scroll down para visualizar ese resultado.</li>
-<li></li>
+<li>Limitar el div contenedor del resultado en pantallas móviles y de tablets para que sólo sea visible al existir contenido de encriptación/desencriptación, y que al generarse el mismo se realice un scroll down para visualizarlo.</li>
+<li>Agregar un botón para scroll up en pantallas móviles y de tablets.</li>
+<li>Agregar un favicon.</li>
+<li>Mostrar mi marca personal (gale).</li>
 </ul>
 <h2>¿Por qué en inglés?</h2>
 Mi proyecto de vida requiere que encare mis proyectos de manera universal. El inglés me acerca a mis objetivos.
