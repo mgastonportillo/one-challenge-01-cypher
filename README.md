@@ -2,7 +2,7 @@
 <p>Primer proyecto "desafío" del curso ONE (Oracle Next Education).</p>
 <hr>
 <h2>Preview</h2>
-<a align="center">><img src="https://user-images.githubusercontent.com/106234166/184077569-c258ae8f-5bc6-430a-9e03-e956263d55ec.png"></a>
+<a align="center"><img src="https://user-images.githubusercontent.com/106234166/184077569-c258ae8f-5bc6-430a-9e03-e956263d55ec.png"></a>
 <a href="https://gale-cypher.netlify.app">https://gale-cypher.netlify.app</a>
 <h2>¿De qué se trata?</h2>
 El "challenge" #1 nos presenta como consigna la creación de una aplicación web que brinde al usuario la posibilidad de encriptar así como de desencriptar texto ingresado. El <a href="https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?node-id=0%3A1">modelo de diseño</a> fue presentado en Figma pero, como se explica en el <a href="https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one">tablero de autogestión de Trello</a>, nos brindaba total flexibilidad al respecto, permitiendo dar rienda suelta a la creatividad. Sólo las siguientes condiciones debían ser cumplidas:
