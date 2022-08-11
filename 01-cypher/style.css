@@ -340,6 +340,10 @@ html, body {
     #inputArea {
         font-size: x-large;
     }
+
+    #output {
+        font-size: x-large;
+    }
 }
 
 /* Desktop */

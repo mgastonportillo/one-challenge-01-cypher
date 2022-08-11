@@ -47,19 +47,7 @@ function reportWindowSize() {
 
 window.addEventListener('resize', function(event) {
     reportWindowSize();
-    if (xAxis >= 1024) {
-        const logos = document.querySelector(".rightLogos");
-        outputContainer.appendChild(cloneEncryptLogo);
-        logos.classList.add("hide");
-        displayResult.classList.add("hide");
-        cloneEncryptLogo.classList.remove("hide");
-        travolta.classList.add("hide");
-    } else {
-        const logos = document.querySelector(".rightLogos");
-        logos.classList.remove("hide");
-        displayResult.classList.remove("hide");
-        cloneEncryptLogo.classList.add("hide");
-    }
+    unhideBottom();
 }, true);
 
 // Resize input text according to content
@@ -149,14 +137,14 @@ function unhideBottom() {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
         travolta.classList.add("hide");
-    }   else {
+    }   else if (xAxis < 1024 && scrollAuxiliar === 0) {
         const logos = document.querySelector(".rightLogos");
         logos.classList.remove("hide");
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
-        if (scrollAuxiliar === 1) {
-            travolta.classList.add("hide");
-        }
+        travolta.classList.remove("hide");
+    } else {
+        travolta.classList.add("hide");
     }
 }
 
