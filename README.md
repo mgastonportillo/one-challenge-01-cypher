@@ -5,7 +5,7 @@
 <a align="center"><img src="https://user-images.githubusercontent.com/106234166/184077569-c258ae8f-5bc6-430a-9e03-e956263d55ec.png"></a>
 <a href="https://gale-cypher.netlify.app">https://gale-cypher.netlify.app</a>
 <h2>¿De qué se trata?</h2>
-El "challenge" #1 nos presenta como consigna la creación de una aplicación web que brinde al usuario la posibilidad de encriptar así como de desencriptar texto ingresado. El <a href="https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?node-id=0%3A1">modelo de diseño</a> fue presentado en Figma pero, como se explica en el <a href="https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one">tablero de autogestión</a> proporcionado en Trello, nos brindaba total flexibilidad al respecto, permitiendo dar rienda suelta a nuestra creatividad. Sólo las siguientes condiciones debían ser cumplidas:
+El "challenge" #1 nos presenta como desafío la creación de una aplicación web que brinde a los usuarios la posibilidad de encriptar así como de desencriptar un texto ingresado por ellos. El <a href="https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?node-id=0%3A1">modelo de diseño</a> fue presentado en Figma pero, como se explica en el <a href="https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one">tablero de autogestión</a> proporcionado en Trello, nos brindaba total flexibilidad en ese aspecto, permitiendo dar rienda suelta a nuestra creatividad.
 <h2>Consignas</h2>
 <ul>
 <li>Debe funcionar solo con letras minúsculas.</li>
@@ -36,6 +36,15 @@ El "challenge" #1 nos presenta como consigna la creación de una aplicación web
 <ul>
 </ul>
 Y en orden inverso para la desencriptación.
+<h2>Mi propuesta</h2>
+<p>Decidí encarar el proyecto con las siguientes características:</p>
+<ul>
+<li>Utilizar el paradigma <a href="https://www.ionos.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/">Mobile First.</a></li>
+<li>Incorporar un diseño responsive que se adapte a pantallas móviles, de tablets y desktop (utilizando dos media queries).</li>
+<li>Hacer que la característica responsive no sólo permita que la aplicación se adapte a diferentes tamaños de pantalla sino que también permita re-posicionar elementos dentro de otros elementos para una visualización más coherente del contenido.</li>
+<li>[MODIFICAR]Limitar al módulo con el resultado de la encriptación sólo sea visible al tener contenido en pantallas móviles y de tablets, y que al generar una encriptación o desencrptación se realice un scroll down para visualizar ese resultado.</li>
+<li></li>
+</ul>
 <h2>¿Por qué en inglés?</h2>
 Mi proyecto de vida requiere que encare mis proyectos de manera universal. El inglés me acerca a mis objetivos.
 <h2>Comentarios</h2>
