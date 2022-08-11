@@ -44,6 +44,7 @@ Y en orden inverso para la desencriptación.
 <li>Hacer que la característica responsive no sólo permita que la aplicación se adapte a diferentes tamaños de pantalla sino que también permita re-posicionar elementos dentro de otros elementos para una visualización más coherente del contenido.</li>
 <li>Limitar el div contenedor del resultado en pantallas móviles y de tablets para que sólo sea visible al existir contenido de encriptación/desencriptación, y que al generarse el mismo se realice un scroll down para visualizarlo.</li>
 <li>Agregar un botón para scroll up en pantallas móviles y de tablets.</li>
+<li>Crear mensajes de alerta personalizados y utilizar animaciones para mostrarlos.</li>
 <li>Agregar un favicon.</li>
 <li>Mostrar mi marca personal (gale).</li>
 </ul>
