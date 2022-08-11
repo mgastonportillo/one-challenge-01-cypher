@@ -49,9 +49,9 @@ Y en orden inverso para la desencriptación.
 <li>Mostrar mi marca personal (gale).</li>
 </ul>
 <h2>¿Por qué en inglés?</h2>
-Mi proyecto de vida requiere que encare mis proyectos de manera universal. El inglés me acerca a mis objetivos.
+Mi proyecto de vida requiere que encare mis producciones de manera universal. El inglés me acerca a mis objetivos.
 <h2>Comentarios</h2>
 <ul>
-<li>El proyecto me pareció muy entretenido, refrescante respecto de JavaScript a tal punto que re-despertó mi curiosidad por el lenguaje.</li>
-<li>La pedagogía detrás del mismo fue muy buena.</li>
+<li>La propuesta me pareció muy entretenida y refrescante respecto de JavaScript a tal punto que re-despertó mi curiosidad por el lenguaje.</li>
+<li>La pedagogía detrás de la misma fue muy buena.</li>
 </ul>
