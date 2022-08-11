@@ -162,14 +162,15 @@ function encryptText() {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
     }
-    let text = textToEncrypt.value;
-    if (text == "") {
+    if (textToEncrypt.value.trim() == "") {
         showError("Try typing something?");
+        textToEncrypt.value = "";
+        adjustHeight();
         if (scrollAuxiliar === 1) {
             scrollAuxiliar--;
         }
-    } else if (text.match(filter) != null) {
-        let words = text.split(" ");
+    } else if (textToEncrypt.value.match(filter) != null) {
+        let words = textToEncrypt.value.split(" ");
         let postWords = [];
         for (let word of words) {
             word = word.replaceAll("e", "enter");
@@ -206,14 +207,15 @@ function decryptText() {
         displayResult.classList.remove("hide");
         cloneEncryptLogo.classList.add("hide");
     }
-    let text = textToEncrypt.value;
-    if (text == "") {
+    if (textToEncrypt.value.trim() == "") {
         showError("Try typing something?");
+        textToEncrypt.value = "";
+        adjustHeight();
         if (scrollAuxiliar === 1) {
             scrollAuxiliar--;
         }
-    } else if (text.match(filter) != null) {
-        let words = text.split(" ");
+    } else if (textToEncrypt.value.match(filter) != null) {
+        let words = textToEncrypt.value.split(" ");
         let postWords = [];
         for (let word of words) {
             word = word.replaceAll("enter", "e");
