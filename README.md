@@ -53,5 +53,5 @@ Mi proyecto de vida requiere que encare mis producciones de manera universal. El
 <h2>Comentarios</h2>
 <ul>
 <li>La propuesta me pareció muy entretenida y refrescante respecto de JavaScript a tal punto que re-despertó mi curiosidad por el lenguaje.</li>
-<li>La pedagogía detrás de la misma fue muy buena.</li>********
+<li>La pedagogía detrás de la misma fue muy buena.</li>
 </ul>
