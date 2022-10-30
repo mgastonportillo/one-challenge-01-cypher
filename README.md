@@ -1,22 +1,25 @@
-<h1 align="center">ONE - Challenge #1: Encriptador</h1>
-<p align="center">Primer proyecto "desafío" del curso ONE (Oracle Next Education)</p>
+<h1 align="center">ONE - Challenge: Text Encryption</h1>
+<p align="center">Challenge #1 for ONE (Oracle Next Education) programme</p>
 <hr>
 <h2>Preview</h2>
 <a align="center"><img src="https://user-images.githubusercontent.com/106234166/184077569-c258ae8f-5bc6-430a-9e03-e956263d55ec.png"></a>
-<a href="https://gale-cypher.netlify.app">https://gale-cypher.netlify.app</a>
-<h2>¿De qué se trata?</h2>
-El "challenge" #1 nos presenta como reto la creación de una aplicación web que brinde a los usuarios la posibilidad de encriptar así como de desencriptar un texto ingresado por ellos. El <a href="https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?node-id=0%3A1">modelo de diseño</a> fue presentado en Figma pero, como se explica en el <a href="https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one">tablero de planificación</a> proporcionado en Trello, nos brinda total flexibilidad al respecto, permitiendo dar rienda suelta a nuestra creatividad.
-<h2>Consignas</h2>
+<a href="https://gale-cypher.netlify.app">Live preview</a>
+<hr>
+<h2>What's this about?</h2>
+The first challenge is an invitation to create a web application that allows the users to encrypt and decrypt text, following a set pattern of rules. The <a href="https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?node-id=0%3A1">prototype design</a> was delivered through Figma, but as explained within the <a href="https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one">kanban board</a> in Trello, it allows complete freedom creativity-wise.
+<hr>
+<h2>Instructions</h2>
 <ul>
-<li>Debe funcionar solo con letras minúsculas.</li>
-<li>No deben ser utilizadas letras con acentos ni caracteres especiales.</li>
-<li>Debe ser posible encriptar una palabra así como también devolver una palabra encriptada a su versión original.<br>Por ejemplo:<br><pre>"gato" => "gaitober"<br>"gaitober" => "gato"</pre>
+<li>Must work with lowercase characters only.</li>
+<li>Characters with accents and other special characters are forbidden.</li>
+<li>The user must have the ability to encrypt a text as well as to decrypt it.<br>Example:<br><pre>"catto" => "caittober"<br>"caittober" => "catto"</pre>
 </li>
-<li>La página debe tener campos para inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre las dos opciones.</li>
-<li>El resultado debe ser mostrado en la pantalla.</li>
-<li><b>Extra</b>: un botón que copie el texto encriptado/desencriptado al portapapeles, es decir, que tenga la misma funcionalidad que <code>ctrl + C</code> o que la opción "copiar" del menú de las aplicaciones.</li>
+<li>The (web) app must provide a field for the user to write down their text, and they should always be able to decide whether they want to decrypt or to encrypt it.</li>
+<li>The outcome text must be displayed on the screen.</li>
+<li><b>Extra</b>: a button that copies the outcome text to the clipboard, allowing the same functionality that <code>ctrl + C</code> or the "copy" option from app menus.</li>
 </ul>
-<h2>Llaves de encriptación</h2>
+<hr>
+<h2>Encryption keys</h2>
 <table>
 <tr>
 <td align="center">e</td>
@@ -35,23 +38,28 @@ El "challenge" #1 nos presenta como reto la creación de una aplicación web que
 </table>
 <ul>
 </ul>
-Y en orden inverso para la desencriptación.
-<h2>Mi propuesta</h2>
-<p>Decidí abordar el proyecto con las siguientes características en mente:</p>
+And reverse order for decryption.
+<hr>
+<h2>My solution</h2>
+<p>I decided to approach the project with the following characteristics in mind:</p>
 <ul>
-<li>Utilizar el paradigma <a href="https://www.ionos.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/">Mobile First.</a></li>
-<li>Incorporar un diseño responsive que se adapte a pantallas móviles, de tablets y desktop (utilizando dos media queries).</li>
-<li>Hacer que la característica responsive no sólo permita que la aplicación se adapte a diferentes tamaños de pantalla sino que también permita re-posicionar elementos dentro de otros elementos para una visualización más coherente del contenido.</li>
-<li>Limitar el div contenedor del resultado en pantallas móviles y de tablets para que sólo sea visible al existir contenido de encriptación/desencriptación, y que al generarse el mismo se realice un scroll down para visualizarlo.</li>
-<li>Agregar un botón para scroll up en pantallas móviles y de tablets.</li>
-<li>Crear mensajes de alerta personalizados y utilizar animaciones para mostrarlos.</li>
-<li>Agregar un favicon.</li>
-<li>Mostrar mi marca personal (gale).</li>
+<li>Utilise the <a href="https://www.ionos.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/">Mobile First</a> paradigm.</li>
+<li>Make it a responsive web app, able to work on mobile, tablets and desktop screens.</li>
+<li>Practice and showcase some DOM manipulation with JavaScript.</li>
+<li>Limit the container div for the outcome text to be displayed in mobile and tablet screens only if there's an outcome, and once it's generated then scroll down to display it.</li>
+<li>Add a button to scruoll up on mobile and tablet screens.</li>
+<li>Add custom notification messages to display errors or successful actions, using fancy animations.</li>
+<li>Add a favicon.</li>
+<li>Display my personal brand (gale).</li>
 </ul>
-<h2>¿Por qué en inglés?</h2>
-Mi proyecto de vida requiere que encare mis producciones de manera universal. El inglés me acerca a mis objetivos.
-<h2>Comentarios</h2>
+<hr>
+<h2>Concepts and Technologies</h2>
 <ul>
-<li>La propuesta me pareció muy entretenida y refrescante respecto de JavaScript a tal punto que re-despertó mi curiosidad por el lenguaje.</li>
-<li>La pedagogía detrás de la misma fue muy buena.</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Vanilla</li>
+<li>Strings methods</li>
+<li>DOM manipulation</li>
+<li>Problem solving</li>
 </ul>
